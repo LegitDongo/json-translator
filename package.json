@@ -1,0 +1,16 @@
+{
+  "name": "json-translator",
+  "version": "1.0.0",
+  "description": "Convert contents of a JSON file into locales of choice with escaped unicode surrogate pairs",
+  "main": "translate.js",
+  "dependencies": {
+    "surrog8": "^0.4.2",
+    "translate-json-object": "^2.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Legit Dongo",
+  "license": "ISC"
+}

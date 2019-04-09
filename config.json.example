@@ -1,0 +1,7 @@
+{
+  "googleApiKey": "",
+  "yandexApiKey": "",
+  "translateLanguages": [
+    "de", "es", "fr", "it", "ko", "pt", "zh-CN"
+  ]
+}
