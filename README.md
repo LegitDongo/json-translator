@@ -14,6 +14,7 @@ This is still useful if you don't mind these things, though
 
 ## Edit
 1. Copy `config.json.example` to `config.json` and fill appropriately
+    * You can have one or both types of API keys, but will default to Yandex when both are specified
 2. Copy `translatethis.json.example` to `translatethis.json` and fill in with the json you want to translate
 
 ## Run

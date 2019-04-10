@@ -1,14 +1,24 @@
 let TJO = require('translate-json-object')();
 let sg = require('surrog8');
 let fs = require('fs');
-let config = require('./config.json.example');
+let config = require('./config.json');
 
-TJO.init({
-    googleApiKey: config.googleApiKey,
-    yandexApiKey: config.yandexApiKey
-});
+let tjoConfig = {};
+if (typeof config.googleApiKey !== 'undefined' && config.googleApiKey !== ''){
+    tjoConfig['googleApiKey'] = config.googleApiKey;
+}
+if (config.yandexApiKey !== 'undefined' && config.yandexApiKey !== ''){
+    tjoConfig['yandexApiKey'] = config.yandexApiKey;
+}
 
-let translateThis = require('./translatethis.json.example');
+if (Object.entries(tjoConfig).length === 0){
+    console.log('Error! You must have a Google API Key or Yandex API Key defined in your config!');
+    process.exit(1);
+}
+
+TJO.init();
+
+let translateThis = require('./translatethis.json');
 
 function strMapToObj(strMap) {
     let obj = Object.create(null);
