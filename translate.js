@@ -16,7 +16,7 @@ if (Object.entries(tjoConfig).length === 0){
     process.exit(1);
 }
 
-TJO.init();
+TJO.init(tjoConfig);
 
 let translateThis = require('./translatethis.json');
 
@@ -61,7 +61,7 @@ function convertAllJsonSurrogatePairs(tree){
 }
 
 async function translateAllLanguages(){
-    fs.mkdir('./translations', (err) => {if (err.code !== 'EEXIST') throw err;});
+    fs.mkdir('./translations', () => {});
     for(let i in config.translateLanguages) {
         let translations = await TJO.translate(translateThis, config.translateLanguages[i]);
         let convertedData = convertAllJsonSurrogatePairs(translations);
