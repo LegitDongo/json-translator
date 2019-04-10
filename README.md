@@ -17,6 +17,11 @@ This is still useful if you don't mind these things, though
     * You can have one or both types of API keys, but will default to Yandex when both are specified
 2. Copy `translatethis.json.example` to `translatethis.json` and fill in with the json you want to translate
 
+For a list of languages and the corresponding code: [Google API](https://cloud.google.com/translate/docs/languages) | 
+[Yandex API](https://tech.yandex.com/translate/doc/dg/concepts/api-overview-docpage/)
+
+You will want to put the language code into your config. 
+
 ## Run
 `node translate.js`
 
