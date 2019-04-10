@@ -61,7 +61,7 @@ function convertAllJsonSurrogatePairs(tree){
 }
 
 async function translateAllLanguages(){
-    fs.mkdir('./translations', 0744, (err) => {if (err.code !== 'EEXIST') throw err;});
+    fs.mkdir('./translations', (err) => {if (err.code !== 'EEXIST') throw err;});
     for(let i in config.translateLanguages) {
         let translations = await TJO.translate(translateThis, config.translateLanguages[i]);
         let convertedData = convertAllJsonSurrogatePairs(translations);
